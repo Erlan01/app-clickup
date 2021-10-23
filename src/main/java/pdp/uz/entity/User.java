@@ -7,7 +7,7 @@ import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import pdp.uz.enums.Role;
+import pdp.uz.enums.SystemRoleName;
 import pdp.uz.template.AbsUUIDEntity;
 
 import javax.persistence.*;
@@ -40,15 +40,15 @@ public class User extends AbsUUIDEntity implements UserDetails {
 
     private boolean enabled;
 
-    private boolean accountNonExpired;
+    private boolean accountNonExpired = true;
 
-    private boolean accountNonLocked;
+    private boolean accountNonLocked = true;
 
-    private boolean credentialsNonExpired;
+    private boolean credentialsNonExpired = true;
 
 
     @Enumerated(value = EnumType.STRING)
-    private Role systemRoleName;
+    private SystemRoleName systemRoleName;
 
 
     @Override
@@ -80,5 +80,12 @@ public class User extends AbsUUIDEntity implements UserDetails {
     @Override
     public boolean isEnabled() {
         return this.enabled;
+    }
+
+    public User(String fullName, String email, String password, SystemRoleName systemRoleName) {
+        this.fullName = fullName;
+        this.email = email;
+        this.password = password;
+        this.systemRoleName = systemRoleName;
     }
 }

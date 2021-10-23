@@ -1,6 +1,6 @@
 package pdp.uz.enums;
 
-public enum Role {
+public enum SystemRoleName {
 
     SYSTEM_ROLE_ADMIN,
 
