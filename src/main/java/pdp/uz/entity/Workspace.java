@@ -6,10 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import pdp.uz.template.AbsLongEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Setter
 @Getter
@@ -31,4 +28,18 @@ public class Workspace extends AbsLongEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Attachment avatar;
+
+    @PrePersist
+    @PreUpdate
+    public void setInitialLetterMyMethod() {
+        this.initialLetter = name.substring(0, 1);
+    }
+
+
+    public Workspace(String name, String color, User owner, Attachment avatar) {
+        this.name = name;
+        this.color = color;
+        this.owner = owner;
+        this.avatar = avatar;
+    }
 }

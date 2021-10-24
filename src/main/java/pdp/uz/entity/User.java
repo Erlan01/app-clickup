@@ -50,6 +50,8 @@ public class User extends AbsUUIDEntity implements UserDetails {
     @Enumerated(value = EnumType.STRING)
     private SystemRoleName systemRoleName;
 
+    private String emailCode;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -88,4 +90,6 @@ public class User extends AbsUUIDEntity implements UserDetails {
         this.password = password;
         this.systemRoleName = systemRoleName;
     }
+
+
 }
