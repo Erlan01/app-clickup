@@ -6,4 +6,6 @@ import pdp.uz.entity.View;
 
 @Repository
 public interface ViewRepo extends JpaRepository<View, Long> {
+
+    View getByName(String list);
 }

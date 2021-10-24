@@ -1,5 +1,7 @@
 package pdp.uz.template;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
@@ -11,8 +13,8 @@ import javax.persistence.MappedSuperclass;
 import java.util.UUID;
 
 @MappedSuperclass
-@Setter
-@Getter
+@EqualsAndHashCode(callSuper = true)
+@Data
 public abstract class AbsUUIDEntity extends AbsMainEntity{
 
     @Id

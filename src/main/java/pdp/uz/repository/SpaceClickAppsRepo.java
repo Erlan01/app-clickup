@@ -9,4 +9,5 @@ import java.util.UUID;
 
 @Repository
 public interface SpaceClickAppsRepo extends JpaRepository<SpaceClickApps, UUID> {
+    List<SpaceClickApps> findAllBySpaceId(UUID id);
 }

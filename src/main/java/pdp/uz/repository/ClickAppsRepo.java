@@ -6,4 +6,7 @@ import pdp.uz.entity.ClickApps;
 
 @Repository
 public interface ClickAppsRepo extends JpaRepository<ClickApps, Long> {
+
+    ClickApps getByName(String priority);
+
 }

@@ -8,4 +8,6 @@ import java.util.UUID;
 
 @Repository
 public interface ProjectRepo extends JpaRepository<Project, UUID> {
+
+    boolean existsByNameAndSpaceId(String name, UUID spaceId);
 }

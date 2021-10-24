@@ -9,4 +9,10 @@ import java.util.UUID;
 
 @Repository
 public interface SpaceRepo extends JpaRepository<Space, UUID> {
+
+    boolean existsByNameAndWorkspaceId(String name, Long workspace_id);
+
+    boolean existsByNameAndWorkspaceIdAndIdNot(String name, Long workspace_id, UUID id);
+
+    List<Space> findAllByWorkspaceId(Long workspaceId);
 }

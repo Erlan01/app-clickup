@@ -8,4 +8,8 @@ import java.util.UUID;
 
 @Repository
 public interface ProjectUserRepo extends JpaRepository<ProjectUser, UUID> {
+    boolean existsByProjectIdAndMemberId(UUID id, UUID memberId);
+
+    void deleteAllByProjectIdAndMemberId(UUID id, UUID memberId);
+
 }

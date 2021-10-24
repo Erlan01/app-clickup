@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import pdp.uz.template.AbsUUIDEntity;
+import pdp.uz.enums.AccessType;
 
 import javax.persistence.*;
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.List;
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = {"name", "space_id"}))
 public class Project extends AbsUUIDEntity {
+
     @Column(nullable = false)
     private String name;
 

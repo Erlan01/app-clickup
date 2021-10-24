@@ -9,4 +9,8 @@ import java.util.UUID;
 
 @Repository
 public interface SpaceUserRepo extends JpaRepository<SpaceUser, UUID> {
+
+    List<SpaceUser> findAllBySpaceId(UUID spaceId);
+
+    boolean existsByMemberIdAndSpaceId(UUID uuid, UUID id);
 }

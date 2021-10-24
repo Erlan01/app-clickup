@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import pdp.uz.enums.SystemRoleName;
 import pdp.uz.template.AbsUUIDEntity;
@@ -51,6 +52,10 @@ public class User extends AbsUUIDEntity implements UserDetails {
     private SystemRoleName systemRoleName;
 
     private String emailCode;
+
+    public static User getCurrentUser() {
+        return (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    }
 
 
     @Override
