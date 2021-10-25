@@ -9,4 +9,11 @@ import java.util.UUID;
 
 @Repository
 public interface CategoryRepo extends JpaRepository<Category, UUID> {
+
+    List<Category> findAllByProjectId(UUID projectId);
+
+    boolean existsByNameAndProjectId(String name, UUID project_id);
+
+    boolean existsByNameAndProjectIdAndIdNot(String name, UUID project_id, UUID id);
+
 }

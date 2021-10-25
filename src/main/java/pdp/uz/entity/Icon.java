@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import pdp.uz.template.AbsLongEntity;
+import pdp.uz.entity.template.AbsLongEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +23,6 @@ public class Icon extends AbsLongEntity {
     @Column(nullable = false)
     private String color;
 
-    @Column
     private String initialLetter;
 
     @OneToOne

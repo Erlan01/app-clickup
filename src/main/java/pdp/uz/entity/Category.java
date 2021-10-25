@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import pdp.uz.template.AbsUUIDEntity;
+import pdp.uz.entity.template.AbsUUIDEntity;
 
 import javax.persistence.*;
 import java.util.List;
@@ -16,6 +16,7 @@ import java.util.List;
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = {"name", "project_id"}))
 public class Category extends AbsUUIDEntity {
+
     @Column(nullable = false)
     private String name;
 

@@ -27,10 +27,10 @@ import java.util.Properties;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private AuthService authService;
+    AuthService authService;
 
     @Autowired
-    private JWTFilter jwtFilter;
+    JWTFilter jwtFilter;
 
     private static final String[] WHITE_LIST = {
             "/swagger-resources/**",

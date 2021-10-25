@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import pdp.uz.enums.StatusType;
-import pdp.uz.template.AbsUUIDEntity;
+import pdp.uz.entity.template.AbsUUIDEntity;
 
 import javax.persistence.*;
 
@@ -16,6 +16,7 @@ import javax.persistence.*;
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = {"name", "space_id"}))
 public class Status extends AbsUUIDEntity {
+
     @Column(nullable = false)
     private String name;
 

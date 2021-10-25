@@ -1,6 +1,5 @@
 package pdp.uz.controller;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
@@ -23,13 +22,13 @@ import javax.validation.Valid;
 public class AuthController {
 
     @Autowired
-    private AuthService authService;
+    AuthService authService;
 
     @Autowired
-    private AuthenticationManager authenticationManager;
+    AuthenticationManager authenticationManager;
 
     @Autowired
-    private JWTProvider jwtProvider;
+    JWTProvider jwtProvider;
 
     @PostMapping("/register")
     public ResponseEntity<?> registerUser (@Valid @RequestBody RegisterDto dto){

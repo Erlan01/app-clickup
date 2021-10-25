@@ -9,4 +9,6 @@ import java.util.UUID;
 
 @Repository
 public interface TaskRepo extends JpaRepository<Task, UUID> {
+
+    List<Task> findAllByCategoryId(UUID category_id);
 }

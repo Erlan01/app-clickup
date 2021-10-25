@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import pdp.uz.template.AbsUUIDEntity;
+import pdp.uz.entity.template.AbsUUIDEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -15,6 +15,7 @@ import javax.persistence.ManyToOne;
 @AllArgsConstructor
 @Entity
 public class SpaceView extends AbsUUIDEntity {
+
     @ManyToOne
     private View view;
 

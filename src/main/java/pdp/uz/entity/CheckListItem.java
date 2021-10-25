@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import pdp.uz.template.AbsUUIDEntity;
+import pdp.uz.entity.template.AbsUUIDEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

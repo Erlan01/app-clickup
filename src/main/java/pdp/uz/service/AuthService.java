@@ -14,22 +14,20 @@ import pdp.uz.model.ApiResponse;
 import pdp.uz.model.RegisterDto;
 import pdp.uz.repository.UserRepository;
 
-import javax.transaction.Transactional;
 import java.util.Optional;
 import java.util.Random;
 
 @Service
-@Transactional
 public class AuthService implements UserDetailsService {
 
     @Autowired
-    private UserRepository userRepository;
+    UserRepository userRepository;
 
     @Autowired
-    private PasswordEncoder passwordEncoder;
+    PasswordEncoder passwordEncoder;
 
     @Autowired
-    private JavaMailSender javaMailSender;
+    JavaMailSender javaMailSender;
 
 
     @Override

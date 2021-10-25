@@ -9,4 +9,6 @@ import java.util.UUID;
 
 @Repository
 public interface TagRepo extends JpaRepository<Tag, UUID> {
+
+    List<Tag> findAllByWorkspaceId(Long workspaceId);
 }

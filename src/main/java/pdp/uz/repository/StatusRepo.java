@@ -9,4 +9,10 @@ import java.util.UUID;
 
 @Repository
 public interface StatusRepo extends JpaRepository<Status, UUID> {
+
+    List<Status> findAllByCategoryId(UUID categoryId);
+
+    boolean existsByNameAndSpaceId(String name, UUID spaceId);
+
+    boolean existsByNameAndSpaceIdAndIdNot(String name, UUID space_id, UUID id);
 }

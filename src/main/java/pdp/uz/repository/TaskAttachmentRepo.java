@@ -8,4 +8,6 @@ import java.util.UUID;
 
 @Repository
 public interface TaskAttachmentRepo extends JpaRepository<TaskAttachment, UUID> {
+
+    void deleteByAttachmentIdAndTaskId(UUID attachment_id, UUID task_id);
 }

@@ -4,8 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import pdp.uz.enums.WorkspaceRoleName;
-import pdp.uz.template.AbsUUIDEntity;
+import pdp.uz.entity.template.AbsUUIDEntity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;

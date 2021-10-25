@@ -8,6 +8,7 @@ import pdp.uz.entity.User;
 import java.util.Optional;
 
 public class SpringSecurityAuditAwareImpl implements AuditorAware<User> {
+
     @Override
     public Optional<User> getCurrentAuditor() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

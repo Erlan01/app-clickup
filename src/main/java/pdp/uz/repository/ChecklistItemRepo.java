@@ -9,4 +9,6 @@ import java.util.UUID;
 
 @Repository
 public interface ChecklistItemRepo extends JpaRepository<CheckListItem, UUID> {
+
+    List<CheckListItem> findAllByCheckListId(UUID checklistId);
 }

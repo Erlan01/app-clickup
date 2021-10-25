@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import pdp.uz.template.AbsLongEntity;
+import pdp.uz.entity.template.AbsLongEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +16,7 @@ import javax.persistence.ManyToOne;
 @AllArgsConstructor
 @Entity
 public class Priority extends AbsLongEntity {
+
     @Column(nullable = false)
     private String name;
 

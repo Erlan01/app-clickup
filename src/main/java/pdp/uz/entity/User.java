@@ -1,15 +1,12 @@
 package pdp.uz.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import pdp.uz.enums.SystemRoleName;
-import pdp.uz.template.AbsUUIDEntity;
+import pdp.uz.entity.template.AbsUUIDEntity;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -17,8 +14,8 @@ import java.util.Collections;
 
 @Setter
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity(name = "users")
 public class User extends AbsUUIDEntity implements UserDetails {
 
@@ -30,14 +27,18 @@ public class User extends AbsUUIDEntity implements UserDetails {
 
     private String password;
 
-    @Column
     private String color;
 
-    @Column
     private String initialLetter;
 
     @OneToOne(fetch = FetchType.LAZY)
     private Attachment avatar;
+
+    @PrePersist
+    @PreUpdate
+    public void setInitialLetterMyMethod() {
+        this.initialLetter = fullName.substring(0, 1);
+    }
 
     private boolean enabled;
 
@@ -52,10 +53,6 @@ public class User extends AbsUUIDEntity implements UserDetails {
     private SystemRoleName systemRoleName;
 
     private String emailCode;
-
-    public static User getCurrentUser() {
-        return (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-    }
 
 
     @Override
@@ -89,12 +86,14 @@ public class User extends AbsUUIDEntity implements UserDetails {
         return this.enabled;
     }
 
+    public static User getCurrentUser() {
+        return (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    }
+
     public User(String fullName, String email, String password, SystemRoleName systemRoleName) {
         this.fullName = fullName;
         this.email = email;
         this.password = password;
         this.systemRoleName = systemRoleName;
     }
-
-
 }

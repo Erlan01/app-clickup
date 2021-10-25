@@ -25,11 +25,11 @@ public class DataLoader implements CommandLineRunner {
 
     private final PriorityRepo priorityRepo;
 
-    @Value("${spring.datasource.init-mode}")
+    @Value("${spring.datasource.initialization-mode}")
     private String initialMode;
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         if (initialMode.equals("always")) {
             List<ClickApps> apps = new ArrayList<>();
             apps.add(new ClickApps("Priority", null));
